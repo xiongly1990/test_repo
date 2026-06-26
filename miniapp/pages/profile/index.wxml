@@ -1,0 +1,125 @@
+<view class="page">
+  <view class="hero-section">
+    <view class="hero-bg">
+      <view class="bubble bubble-1"></view>
+      <view class="bubble bubble-2"></view>
+      <view class="star star-1">✨</view>
+      <view class="star star-2">⭐</view>
+    </view>
+    
+    <view class="hero-content">
+      <view class="profile-top">
+        <view class="avatar-wrap">
+          <view class="avatar-ring">
+            <text class="avatar-emoji">{{avatarEmoji}}</text>
+          </view>
+          <view class="level-badge">Lv.{{currentLevel || 1}}</view>
+        </view>
+        <view class="profile-info">
+          <text class="nickname">{{childInfo.name || '小朋友'}}</text>
+          <text class="sub-info">加入于 {{joinDate || '未知'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content-wrap">
+    <view class="stats-card">
+      <view class="stat-item">
+        <view class="stat-icon-wrap streak-bg">
+          <text class="stat-icon">🔥</text>
+        </view>
+        <view class="stat-data">
+          <text class="stat-value">{{streakDays}}</text>
+          <text class="stat-label">连续打卡</text>
+        </view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-icon-wrap days-bg">
+          <text class="stat-icon">📅</text>
+        </view>
+        <view class="stat-data">
+          <text class="stat-value">{{totalDays}}</text>
+          <text class="stat-label">累计天数</text>
+        </view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <view class="stat-icon-wrap points-bg">
+          <text class="stat-icon">💎</text>
+        </view>
+        <view class="stat-data">
+          <text class="stat-value">{{points}}</text>
+          <text class="stat-label">我的积分</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="menu-section">
+      <view class="section-header">
+        <view class="title-bar"></view>
+        <text class="section-title">常用功能</text>
+      </view>
+      
+      <view class="menu-list">
+        <view class="menu-item" bindtap="goToCheckinRecords">
+          <view class="menu-icon-wrap record-bg">
+            <text class="menu-icon">📋</text>
+          </view>
+          <view class="menu-info">
+            <text class="menu-title">打卡记录</text>
+            <text class="menu-desc">查看历史打卡</text>
+          </view>
+          <text class="menu-arrow">›</text>
+        </view>
+
+        <view class="menu-item" bindtap="goToExchangeRecords">
+          <view class="menu-icon-wrap reward-bg">
+            <text class="menu-icon">🎁</text>
+          </view>
+          <view class="menu-info">
+            <text class="menu-title">兑换记录</text>
+            <text class="menu-desc">查看已兑换奖励</text>
+          </view>
+          <text class="menu-arrow">›</text>
+        </view>
+
+        <view class="menu-item" bindtap="goToAchievement">
+          <view class="menu-icon-wrap trophy-bg">
+            <text class="menu-icon">🏆</text>
+          </view>
+          <view class="menu-info">
+            <text class="menu-title">我的成就</text>
+            <text class="menu-desc">已解锁 {{unlockedCount}} 个</text>
+          </view>
+          <text class="menu-arrow">›</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="menu-section">
+      <view class="section-header">
+        <view class="title-bar"></view>
+        <text class="section-title">其他</text>
+      </view>
+      
+      <view class="menu-list">
+        <view class="menu-item" bindtap="onAbout">
+          <view class="menu-icon-wrap about-bg">
+            <text class="menu-icon">ℹ️</text>
+          </view>
+          <view class="menu-info">
+            <text class="menu-title">关于我们</text>
+            <text class="menu-desc">版本 v1.0.0</text>
+          </view>
+          <text class="menu-arrow">›</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="logout-section">
+      <button class="logout-btn" bindtap="onLogout">退出登录</button>
+    </view>
+  </view>
+</view>

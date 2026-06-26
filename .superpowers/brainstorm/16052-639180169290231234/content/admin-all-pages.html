@@ -1,0 +1,423 @@
+<h2>后台管理系统 — 全模块设计</h2>
+<p class="subtitle">家长端管理后台 · 打卡流程闭环</p>
+
+<!-- 页面一：登录页 -->
+<div class="section">
+<h3>页面一：登录页</h3>
+<div class="mockup">
+<div class="mockup-header">登录页预览</div>
+<div class="mockup-body" style="background:linear-gradient(135deg,#667eea,#764ba2);padding:40px;display:flex;align-items:center;justify-content:center;min-height:300px">
+<div style="background:white;border-radius:12px;padding:40px;width:320px;box-shadow:0 10px 40px rgba(0,0,0,0.2)">
+<div style="text-align:center;margin-bottom:30px">
+<div style="font-size:40px;margin-bottom:10px">👨‍👩‍👧</div>
+<div style="font-size:20px;font-weight:bold;color:#333">亲子学习打卡</div>
+<div style="font-size:12px;color:#666;margin-top:5px">管理后台</div>
+</div>
+<div style="margin-bottom:15px">
+<div style="font-size:12px;color:#666;margin-bottom:5px">账号</div>
+<input class="mock-input" placeholder="请输入手机号" style="width:100%;box-sizing:border-box">
+</div>
+<div style="margin-bottom:20px">
+<div style="font-size:12px;color:#666;margin-bottom:5px">密码</div>
+<input class="mock-input" placeholder="请输入密码" type="password" style="width:100%;box-sizing:border-box">
+</div>
+<div style="background:#667eea;color:white;padding:12px;border-radius:8px;text-align:center;font-size:14px">登录</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 页面二：首页/概览 -->
+<div class="section">
+<h3>页面二：首页 — 数据概览</h3>
+<div class="mockup">
+<div class="mockup-header">管理后台首页</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="display:flex;gap:15px;margin-bottom:15px">
+<div style="flex:1;background:white;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="display:flex;align-items:center;gap:15px">
+<div style="width:50px;height:50px;background:#E8F4FF;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px">👶</div>
+<div>
+<div style="font-size:12px;color:#666">孩子数量</div>
+<div style="font-size:24px;font-weight:bold;color:#333">2人</div>
+</div>
+</div>
+</div>
+<div style="flex:1;background:white;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="display:flex;align-items:center;gap:15px">
+<div style="width:50px;height:50px;background:#FFF3E8;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px">🔥</div>
+<div>
+<div style="font-size:12px;color:#666">今日打卡率</div>
+<div style="font-size:24px;font-weight:bold;color:#FF8C00">85%</div>
+</div>
+</div>
+</div>
+</div>
+<div style="display:flex;gap:15px;margin-bottom:15px">
+<div style="flex:1;background:white;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="display:flex;align-items:center;gap:15px">
+<div style="width:50px;height:50px;background:#E8F8E8;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px">✓</div>
+<div>
+<div style="font-size:12px;color:#666">本周完成</div>
+<div style="font-size:24px;font-weight:bold;color:#4CAF50">28次</div>
+</div>
+</div>
+</div>
+<div style="flex:1;background:white;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="display:flex;align-items:center;gap:15px">
+<div style="width:50px;height:50px;background:#FFE8E8;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px">⚠️</div>
+<div>
+<div style="font-size:12px;color:#666">待审核</div>
+<div style="font-size:24px;font-weight:bold;color:#F44336">3张</div>
+</div>
+</div>
+</div>
+</div>
+<div style="background:white;border-radius:8px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="font-size:14px;font-weight:bold;margin-bottom:15px">📋 今日打卡情况</div>
+<table style="width:100%;font-size:12px;border-collapse:collapse">
+<thead>
+<tr style="border-bottom:1px solid #eee">
+<th style="text-align:left;padding:8px 0;color:#666">孩子</th>
+<th style="text-align:center;padding:8px 0;color:#666">任务</th>
+<th style="text-align:center;padding:8px 0;color:#666">状态</th>
+<th style="text-align:center;padding:8px 0;color:#666">连击</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid #f5f5f5">
+<td style="padding:10px 0"><span style="margin-right:8px">👦</span>小明</td>
+<td style="text-align:center">3/3</td>
+<td style="text-align:center"><span style="background:#E8F8E8;color:#4CAF50;padding:2px 8px;border-radius:10px;font-size:10px">已完成</span></td>
+<td style="text-align:center;color:#FF6B6B">🔥7天</td>
+</tr>
+<tr style="border-bottom:1px solid #f5f5f5">
+<td style="padding:10px 0"><span style="margin-right:8px">👧</span>小红</td>
+<td style="text-align:center">2/3</td>
+<td style="text-align:center"><span style="background:#FFF3E8;color:#FF8C00;padding:2px 8px;border-radius:10px;font-size:10px">进行中</span></td>
+<td style="text-align:center;color:#999">—</td>
+</tr>
+<tr>
+<td style="padding:10px 0"><span style="margin-right:8px">👦</span>小华</td>
+<td style="text-align:center">0/3</td>
+<td style="text-align:center"><span style="background:#FFE8E8;color:#F44336;padding:2px 8px;border-radius:10px;font-size:10px">未打卡</span></td>
+<td style="text-align:center;color:#999">—</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 页面三：添加小孩 -->
+<div class="section">
+<h3>页面三：添加小孩</h3>
+<div class="mockup">
+<div class="mockup-header">添加孩子页面</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="background:white;border-radius:8px;padding:25px;max-width:500px;margin:0 auto;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="font-size:16px;font-weight:bold;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #eee">👶 添加孩子</div>
+<div style="margin-bottom:15px">
+<div style="font-size:12px;color:#666;margin-bottom:5px">孩子姓名 *</div>
+<input class="mock-input" placeholder="请输入孩子姓名" style="width:100%;box-sizing:border-box">
+</div>
+<div style="margin-bottom:15px">
+<div style="font-size:12px;color:#666;margin-bottom:5px">生日</div>
+<input class="mock-input" placeholder="选择日期" style="width:100%;box-sizing:border-box">
+</div>
+<div style="margin-bottom:15px">
+<div style="font-size:12px;color:#666;margin-bottom:5px">年级/班级</div>
+<input class="mock-input" placeholder="如：小学三年级" style="width:100%;box-sizing:border-box">
+</div>
+<div style="margin-bottom:15px">
+<div style="font-size:12px;color:#666;margin-bottom:5px">头像</div>
+<div style="border:2px dashed #ddd;border-radius:8px;padding:30px;text-align:center;color:#999;font-size:13px">点击上传头像</div>
+</div>
+</div>
+<div style="display:flex;gap:12px;margin-top:20px;justify-content:center">
+<button style="width:180px;padding:12px 20px;border:1px solid #ddd;background:white;color:#666;border-radius:25px;font-size:14px;cursor:pointer">取消</button>
+<button style="width:180px;padding:12px 20px;border:none;background:linear-gradient(135deg,#667eea,#764ba2);color:white;border-radius:25px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(102,126,234,0.3)">保存</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 页面四：任务设置 -->
+<div class="section">
+<h3>页面四：任务设置</h3>
+<div class="mockup">
+<div class="mockup-header">任务设置页面</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="display:flex;gap:15px;min-height:400px">
+<!-- 左侧孩子列表 -->
+<div style="width:200px;background:white;border-radius:8px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="font-size:13px;font-weight:bold;margin-bottom:10px;color:#666">选择孩子</div>
+<div style="padding:10px;background:#E8F4FF;border-radius:6px;margin-bottom:8px;display:flex;align-items:center;gap:8px">
+<span>👦</span><span style="font-size:13px">小明</span>
+</div>
+<div style="padding:10px;border-radius:6px;margin-bottom:8px;display:flex;align-items:center;gap:8px;color:#999">
+<span>👧</span><span style="font-size:13px">小红</span>
+</div>
+<div style="padding:10px;border-radius:6px;display:flex;align-items:center;gap:8px;color:#999">
+<span>👦</span><span style="font-size:13px">小华</span>
+</div>
+</div>
+<!-- 右侧任务列表 -->
+<div style="flex:1;background:white;border-radius:8px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+<div style="font-size:14px;font-weight:bold">📋 每日任务配置</div>
+<div style="background:#667eea;color:white;padding:6px 12px;border-radius:6px;font-size:12px">+ 添加任务</div>
+</div>
+<div style="border:1px solid #eee;border-radius:8px;overflow:hidden;margin-bottom:10px">
+<div style="display:flex;align-items:center;padding:12px 15px;border-bottom:1px solid #eee;background:#f8f8f8">
+<div style="flex:1;font-size:13px;font-weight:bold">阅读绘本</div>
+<div style="font-size:11px;background:#E8F4FF;color:#4A90D9;padding:2px 8px;border-radius:10px">每日</div>
+</div>
+<div style="display:flex;justify-content:space-between;padding:10px 15px;font-size:12px;color:#666">
+<span>⏰ 时间：不限制</span>
+<span>📷 需要拍照：✓</span>
+<span>⭐ 积分：+10</span>
+</div>
+</div>
+<div style="border:1px solid #eee;border-radius:8px;overflow:hidden;margin-bottom:10px">
+<div style="display:flex;align-items:center;padding:12px 15px;border-bottom:1px solid #eee;background:#f8f8f8">
+<div style="flex:1;font-size:13px;font-weight:bold">写字练习</div>
+<div style="font-size:11px;background:#FFF3E8;color:#FF8C00;padding:2px 8px;border-radius:10px">周一至周五</div>
+</div>
+<div style="display:flex;justify-content:space-between;padding:10px 15px;font-size:12px;color:#666">
+<span>⏰ 时间：18:00-20:00</span>
+<span>📷 需要拍照：✓</span>
+<span>⭐ 积分：+15</span>
+</div>
+</div>
+<div style="border:1px solid #eee;border-radius:8px;overflow:hidden;margin-bottom:10px">
+<div style="display:flex;align-items:center;padding:12px 15px;border-bottom:1px solid #eee;background:#f8f8f8">
+<div style="flex:1;font-size:13px;font-weight:bold">运动20分钟</div>
+<div style="font-size:11px;background:#E8F8E8;color:#4CAF50;padding:2px 8px;border-radius:10px">每日</div>
+</div>
+<div style="display:flex;justify-content:space-between;padding:10px 15px;font-size:12px;color:#666">
+<span>⏰ 时间：不限制</span>
+<span>📷 需要拍照：✗</span>
+<span>⭐ 积分：+20</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 页面五：奖励管理 -->
+<div class="section">
+<h3>页面五：奖励管理</h3>
+<div class="mockup">
+<div class="mockup-header">奖励管理页面</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="display:flex;gap:15px;min-height:350px">
+<!-- 左侧奖励分类 -->
+<div style="width:180px;background:white;border-radius:8px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="font-size:13px;font-weight:bold;margin-bottom:10px;color:#666">奖励分类</div>
+<div style="padding:10px;background:#FFF3E8;border-radius:6px;margin-bottom:8px;font-size:13px;color:#FF8C00">🍦 美食</div>
+<div style="padding:10px;border-radius:6px;margin-bottom:8px;font-size:13px;color:#999">🎮 特权</div>
+<div style="padding:10px;border-radius:6px;margin-bottom:8px;font-size:13px;color:#999">📚 物品</div>
+<div style="padding:10px;border-radius:6px;font-size:13px;color:#999">🏆 成就徽章</div>
+</div>
+<!-- 右侧奖励列表 -->
+<div style="flex:1;background:white;border-radius:8px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+<div style="font-size:14px;font-weight:bold">🍦 美食奖励列表</div>
+<div style="background:#FF8C00;color:white;padding:6px 12px;border-radius:6px;font-size:12px">+ 添加奖励</div>
+</div>
+<table style="width:100%;font-size:12px;border-collapse:collapse">
+<thead>
+<tr style="border-bottom:1px solid #eee">
+<th style="text-align:left;padding:10px 0;color:#666">奖励名称</th>
+<th style="text-align:center;padding:10px 0;color:#666">图标</th>
+<th style="text-align:center;padding:10px 0;color:#666">所需积分</th>
+<th style="text-align:center;padding:10px 0;color:#666">库存</th>
+<th style="text-align:center;padding:10px 0;color:#666">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid #f5f5f5">
+<td style="padding:12px 0">冰淇淋</td>
+<td style="text-align:center;font-size:20px">🍦</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">无限</td>
+<td style="text-align:center"><span style="color:#4A90D9;margin-right:10px">编辑</span><span style="color:#F44336">删除</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f5f5f5">
+<td style="padding:12px 0">麦当劳</td>
+<td style="text-align:center;font-size:20px">🍔</td>
+<td style="text-align:center">500</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><span style="color:#4A90D9;margin-right:10px">编辑</span><span style="color:#F44336">删除</span></td>
+</tr>
+<tr style="border-bottom:1px solid #f5f5f5">
+<td style="padding:12px 0">必胜客</td>
+<td style="text-align:center;font-size:20px">🍕</td>
+<td style="text-align:center">800</td>
+<td style="text-align:center">无限</td>
+<td style="text-align:center"><span style="color:#4A90D9;margin-right:10px">编辑</span><span style="color:#F44336">删除</span></td>
+</tr>
+<tr>
+<td style="padding:12px 0">蛋糕</td>
+<td style="text-align:center;font-size:20px">🎂</td>
+<td style="text-align:center">300</td>
+<td style="text-align:center">无限</td>
+<td style="text-align:center"><span style="color:#4A90D9;margin-right:10px">编辑</span><span style="color:#F44336">删除</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 页面六：手动补卡 -->
+<div class="section">
+<h3>页面六：手动补卡</h3>
+<div class="mockup">
+<div class="mockup-header">补卡记录页面</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="background:white;border-radius:8px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+<div style="font-size:14px;font-weight:bold">📋 补卡记录</div>
+<div style="background:#667eea;color:white;padding:6px 12px;border-radius:6px;font-size:12px">+ 手动补卡</div>
+</div>
+<table style="width:100%;font-size:12px;border-collapse:collapse">
+<thead>
+<tr style="border-bottom:1px solid #eee">
+<th style="text-align:left;padding:10px 0;color:#666">孩子</th>
+<th style="text-align:center;padding:10px 0;color:#666">补卡日期</th>
+<th style="text-align:left;padding:10px 0;color:#666">任务</th>
+<th style="text-align:center;padding:10px 0;color:#666">类型</th>
+<th style="text-align:left;padding:10px 0;color:#666">原因</th>
+<th style="text-align:center;padding:10px 0;color:#666">操作人</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid #f5f5f5">
+<td style="padding:12px 0"><span style="margin-right:5px">👦</span>小明</td>
+<td style="text-align:center">2024-01-15</td>
+<td style="text-align:left">写字练习</td>
+<td style="text-align:center"><span style="background:#E8F4FF;color:#4A90D9;padding:2px 8px;border-radius:10px;font-size:10px">补卡</span></td>
+<td style="text-align:left">外出比赛</td>
+<td style="text-align:center">爸爸</td>
+</tr>
+<tr style="border-bottom:1px solid #f5f5f5">
+<td style="padding:12px 0"><span style="margin-right:5px">👧</span>小红</td>
+<td style="text-align:center">2024-01-10</td>
+<td style="text-align:left">阅读绘本</td>
+<td style="text-align:center"><span style="background:#FFE8E8;color:#F44336;padding:2px 8px;border-radius:10px;font-size:10px">撤销</span></td>
+<td style="text-align:left">误打卡</td>
+<td style="text-align:center">妈妈</td>
+</tr>
+<tr>
+<td style="padding:12px 0"><span style="margin-right:5px">👦</span>小华</td>
+<td style="text-align:center">2024-01-05</td>
+<td style="text-align:left">运动20分钟</td>
+<td style="text-align:center"><span style="background:#E8F4FF;color:#4A90D9;padding:2px 8px;border-radius:10px;font-size:10px">补卡</span></td>
+<td style="text-align:left">生病请假</td>
+<td style="text-align:center">妈妈</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="background:white;border-radius:8px;padding:20px;margin-top:15px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="font-size:14px;font-weight:bold;margin-bottom:15px">➕ 新增补卡</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">
+<div>
+<div style="font-size:12px;color:#666;margin-bottom:5px">选择孩子</div>
+<select class="mock-input" style="width:100%;box-sizing:border-box">
+<option>请选择</option>
+<option>小明</option>
+<option>小红</option>
+<option>小华</option>
+</select>
+</div>
+<div>
+<div style="font-size:12px;color:#666;margin-bottom:5px">补卡日期</div>
+<input class="mock-input" placeholder="选择日期" style="width:100%;box-sizing:border-box">
+</div>
+<div>
+<div style="font-size:12px;color:#666;margin-bottom:5px">补卡任务</div>
+<select class="mock-input" style="width:100%;box-sizing:border-box">
+<option>请选择</option>
+<option>阅读绘本</option>
+<option>写字练习</option>
+<option>运动20分钟</option>
+</select>
+</div>
+<div>
+<div style="font-size:12px;color:#666;margin-bottom:5px">补卡原因</div>
+<input class="mock-input" placeholder="请输入原因" style="width:100%;box-sizing:border-box">
+</div>
+</div>
+<div style="display:flex;gap:10px;margin-top:15px">
+<div style="flex:1;background:#f5f5f5;color:#666;padding:10px;border-radius:6px;text-align:center;font-size:13px">取消</div>
+<div style="flex:1;background:#667eea;color:white;padding:10px;border-radius:6px;text-align:center;font-size:13px">确认补卡</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 页面七：打卡审核 -->
+<div class="section">
+<h3>页面七：打卡审核</h3>
+<div class="mockup">
+<div class="mockup-header">待审核打卡</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="background:white;border-radius:8px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
+<div style="font-size:14px;font-weight:bold;margin-bottom:15px">📷 待审核打卡（3条）</div>
+<div style="display:grid;gap:15px">
+<div style="border:1px solid #FFE082;border-radius:8px;padding:15px;background:#FFFBF0">
+<div style="display:flex;justify-content:space-between;margin-bottom:10px">
+<div><span style="margin-right:5px">👦</span><strong>小明</strong> · <span style="color:#666">写字练习</span></div>
+<div style="font-size:11px;color:#999">今天 14:30</div>
+</div>
+<div style="background:#f5f5f5;border-radius:6px;padding:15px;text-align:center;margin-bottom:10px">
+<div style="font-size:32px;margin-bottom:5px">📄</div>
+<div style="font-size:11px;color:#666">打卡照片</div>
+</div>
+<div style="display:flex;gap:10px">
+<div style="flex:1;background:#FFE8E8;color:#F44336;padding:8px;border-radius:6px;text-align:center;font-size:12px">❌ 不通过</div>
+<div style="flex:1;background:#E8F8E8;color:#4CAF50;padding:8px;border-radius:6px;text-align:center;font-size:12px">✓ 通过</div>
+</div>
+</div>
+<div style="border:1px solid #FFE082;border-radius:8px;padding:15px;background:#FFFBF0">
+<div style="display:flex;justify-content:space-between;margin-bottom:10px">
+<div><span style="margin-right:5px">👧</span><strong>小红</strong> · <span style="color:#666">阅读绘本</span></div>
+<div style="font-size:11px;color:#999">今天 15:20</div>
+</div>
+<div style="background:#f5f5f5;border-radius:6px;padding:15px;text-align:center;margin-bottom:10px">
+<div style="font-size:32px;margin-bottom:5px">📄</div>
+<div style="font-size:11px;color:#666">打卡照片</div>
+</div>
+<div style="display:flex;gap:10px">
+<div style="flex:1;background:#FFE8E8;color:#F44336;padding:8px;border-radius:6px;text-align:center;font-size:12px">❌ 不通过</div>
+<div style="flex:1;background:#E8F8E8;color:#4CAF50;padding:8px;border-radius:6px;text-align:center;font-size:12px">✓ 通过</div>
+</div>
+</div>
+<div style="border:1px solid #FFE082;border-radius:8px;padding:15px;background:#FFFBF0">
+<div style="display:flex;justify-content:space-between;margin-bottom:10px">
+<div><span style="margin-right:5px">👦</span><strong>小华</strong> · <span style="color:#666">运动20分钟</span></div>
+<div style="font-size:11px;color:#999">今天 16:45</div>
+</div>
+<div style="background:#f5f5f5;border-radius:6px;padding:15px;text-align:center;margin-bottom:10px">
+<div style="font-size:32px;margin-bottom:5px">📄</div>
+<div style="font-size:11px;color:#666">打卡照片</div>
+</div>
+<div style="display:flex;gap:10px">
+<div style="flex:1;background:#FFE8E8;color:#F44336;padding:8px;border-radius:6px;text-align:center;font-size:12px">❌ 不通过</div>
+<div style="flex:1;background:#E8F8E8;color:#4CAF50;padding:8px;border-radius:6px;text-align:center;font-size:12px">✓ 通过</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+

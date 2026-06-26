@@ -1,0 +1,237 @@
+<h2>小程序端 — 四大模块详细设计</h2>
+<p class="subtitle">首页 · 任务树 · 奖励 · 我的</p>
+
+<!-- 模块一：首页 -->
+<div class="section">
+<h3>模块一：首页 — 今日任务</h3>
+<div class="mockup">
+<div class="mockup-header">首页预览</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="max-width:280px;margin:0 auto;background:white;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);overflow:hidden">
+<div style="background:#FF6B6B;padding:8px 15px;display:flex;justify-content:space-between;color:white;font-size:10px">
+<span>📶 微信</span><span>🔋 80%</span>
+</div>
+<div style="background:linear-gradient(135deg,#FF6B6B,#FF8E53);padding:20px;text-align:center;color:white">
+<div style="font-size:12px;opacity:0.9">今日任务</div>
+<div style="font-size:28px;font-weight:bold;margin-top:5px">3个任务</div>
+<div style="background:rgba(255,255,255,0.2);border-radius:20px;padding:5px 15px;display:inline-block;margin-top:10px;font-size:11px">🔥 连续7天打卡</div>
+</div>
+<div style="padding:15px">
+<div style="display:flex;align-items:center;gap:10px;padding:10px;background:#FFF5F5;border-radius:8px;margin-bottom:10px;border:2px solid #FF6B6B">
+<div style="width:40px;height:40px;background:#FF6B6B;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:20px">📖</div>
+<div style="flex:1">
+<div style="font-weight:bold;font-size:14px">阅读绘本</div>
+<div style="font-size:11px;color:#999">已完成 ✓</div>
+</div>
+<div style="background:#ccc;color:white;padding:4px 10px;border-radius:12px;font-size:10px">已完成</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;padding:10px;background:#f8f8f8;border-radius:8px;margin-bottom:10px">
+<div style="width:40px;height:40px;background:#4ECDC4;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:20px">✏️</div>
+<div style="flex:1">
+<div style="font-weight:bold;font-size:14px">写字练习</div>
+<div style="font-size:11px;color:#666">待打卡</div>
+</div>
+<div style="background:#4ECDC4;color:white;padding:4px 10px;border-radius:12px;font-size:10px">去打卡</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;padding:10px;background:#f8f8f8;border-radius:8px">
+<div style="width:40px;height:40px;background:#95E1D3;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:20px">🏃</div>
+<div style="flex:1">
+<div style="font-weight:bold;font-size:14px">运动20分钟</div>
+<div style="font-size:11px;color:#666">待打卡</div>
+</div>
+<div style="background:#95E1D3;color:white;padding:4px 10px;border-radius:12px;font-size:10px">去打卡</div>
+</div>
+</div>
+<div style="border-top:1px solid #eee;padding:10px;display:flex;justify-content:space-around">
+<div style="text-align:center"><div style="font-size:18px">🏠</div><div style="font-size:10px;color:#FF6B6B">首页</div></div>
+<div style="text-align:center"><div style="font-size:18px">🌳</div><div style="font-size:10px;color:#999">任务树</div></div>
+<div style="text-align:center"><div style="font-size:18px">🎁</div><div style="font-size:10px;color:#999">奖励</div></div>
+<div style="text-align:center"><div style="font-size:18px">👤</div><div style="font-size:10px;color:#999">我的</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 模块二：任务树 -->
+<div class="section">
+<h3>模块二：任务树 — 成就解锁</h3>
+<div class="mockup">
+<div class="mockup-header">任务树预览</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="max-width:280px;margin:0 auto;background:white;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);overflow:hidden">
+<div style="background:#7B68EE;padding:8px 15px;display:flex;justify-content:space-between;color:white;font-size:10px">
+<span>📶 微信</span><span>🔋 80%</span>
+</div>
+<div style="padding:15px">
+<div style="text-align:center;margin-bottom:15px">
+<div style="font-size:12px;color:#7B68EE">任务树</div>
+<div style="font-size:14px;font-weight:bold;margin-top:5px">🏆 已解锁成就</div>
+</div>
+<div style="position:relative;padding-left:20px">
+<div style="position:absolute;left:15px;top:0;bottom:0;width:2px;background:#7B68EE"></div>
+<div style="position:relative;margin-bottom:15px">
+<div style="position:absolute;left:-12px;top:8px;width:12px;height:12px;background:#7B68EE;border-radius:50%;border:2px solid white"></div>
+<div style="background:#E8E6FF;padding:10px;border-radius:8px;margin-left:10px">
+<div style="font-size:13px;font-weight:bold">🌟 第1层：初次打卡</div>
+<div style="font-size:10px;color:#7B68EE">✓ 已完成</div>
+</div>
+</div>
+<div style="position:relative;margin-bottom:15px">
+<div style="position:absolute;left:-12px;top:8px;width:12px;height:12px;background:#7B68EE;border-radius:50%;border:2px solid white"></div>
+<div style="background:#E8E6FF;padding:10px;border-radius:8px;margin-left:10px">
+<div style="font-size:13px;font-weight:bold">🌟 第2层：连续7天</div>
+<div style="font-size:10px;color:#7B68EE">✓ 已完成 · 奖励：徽章x1</div>
+</div>
+</div>
+<div style="position:relative;margin-bottom:15px">
+<div style="position:absolute;left:-12px;top:8px;width:12px;height:12px;background:white;border:2px solid #7B68EE;border-radius:50%"></div>
+<div style="background:#f8f8f8;padding:10px;border-radius:8px;margin-left:10px;border:1px dashed #7B68EE">
+<div style="font-size:13px;font-weight:bold">🌟 第3层：连续30天</div>
+<div style="font-size:10px;color:#7B68EE">进行中 · 进度 7/30天</div>
+<div style="width:100%;height:6px;background:#eee;border-radius:3px;margin-top:8px"><div style="width:23%;height:100%;background:#7B68EE;border-radius:3px"></div></div>
+</div>
+</div>
+<div style="position:relative;margin-bottom:15px">
+<div style="position:absolute;left:-12px;top:8px;width:12px;height:12px;background:white;border:2px solid #ccc;border-radius:50%"></div>
+<div style="background:#f8f8f8;padding:10px;border-radius:8px;margin-left:10px;border:1px dashed #ccc">
+<div style="font-size:13px;font-weight:bold;color:#999">🌟 第4层：连续100天</div>
+<div style="font-size:10px;color:#999">未解锁 · 奖励：神秘大礼</div>
+</div>
+</div>
+<div style="position:relative">
+<div style="position:absolute;left:-12px;top:8px;width:12px;height:12px;background:white;border:2px solid #ccc;border-radius:50%"></div>
+<div style="background:#f8f8f8;padding:10px;border-radius:8px;margin-left:10px;border:1px dashed #ccc">
+<div style="font-size:13px;font-weight:bold;color:#999">🏆 终极成就：学习达人</div>
+<div style="font-size:10px;color:#999">连续365天 · 奖励：超级大礼</div>
+</div>
+</div>
+</div>
+</div>
+<div style="border-top:1px solid #eee;padding:10px;display:flex;justify-content:space-around">
+<div style="text-align:center"><div style="font-size:18px">🏠</div><div style="font-size:10px;color:#999">首页</div></div>
+<div style="text-align:center"><div style="font-size:18px">🌳</div><div style="font-size:10px;color:#7B68EE">任务树</div></div>
+<div style="text-align:center"><div style="font-size:18px">🎁</div><div style="font-size:10px;color:#999">奖励</div></div>
+<div style="text-align:center"><div style="font-size:18px">👤</div><div style="font-size:10px;color:#999">我的</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 模块三：奖励中心 -->
+<div class="section">
+<h3>模块三：奖励中心 — 积分兑换</h3>
+<div class="mockup">
+<div class="mockup-header">奖励中心预览</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="max-width:280px;margin:0 auto;background:white;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);overflow:hidden">
+<div style="background:#FFB347;padding:8px 15px;display:flex;justify-content:space-between;color:white;font-size:10px">
+<span>📶 微信</span><span>🔋 80%</span>
+</div>
+<div style="background:linear-gradient(135deg,#FFB347,#FFCC80);padding:20px;text-align:center;color:white">
+<div style="font-size:12px;opacity:0.9">我的积分</div>
+<div style="font-size:32px;font-weight:bold;margin-top:5px">850</div>
+<div style="font-size:11px;opacity:0.9;margin-top:5px">已兑换 3 件奖励</div>
+</div>
+<div style="padding:15px">
+<div style="font-size:12px;color:#666;margin-bottom:10px">— 可兑换奖励 —</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div style="background:#FFF9E6;border:1px solid #FFE082;border-radius:8px;padding:10px;text-align:center">
+<div style="font-size:32px;margin-bottom:5px">🍦</div>
+<div style="font-size:12px;font-weight:bold">冰淇淋</div>
+<div style="font-size:10px;color:#FFB347">100积分</div>
+<div style="background:#FFB347;color:white;padding:4px 8px;border-radius:10px;font-size:9px;margin-top:5px">兑换</div>
+</div>
+<div style="background:#FFF9E6;border:1px solid #FFE082;border-radius:8px;padding:10px;text-align:center">
+<div style="font-size:32px;margin-bottom:5px">🎮</div>
+<div style="font-size:12px;font-weight:bold">游戏时间</div>
+<div style="font-size:10px;color:#FFB347">200积分</div>
+<div style="background:#FFB347;color:white;padding:4px 8px;border-radius:10px;font-size:9px;margin-top:5px">兑换</div>
+</div>
+<div style="background:#FFF9E6;border:1px solid #FFE082;border-radius:8px;padding:10px;text-align:center">
+<div style="font-size:32px;margin-bottom:5px">📚</div>
+<div style="font-size:12px;font-weight:bold">新绘本</div>
+<div style="font-size:10px;color:#FFB347">300积分</div>
+<div style="background:#FFB347;color:white;padding:4px 8px;border-radius:10px;font-size:9px;margin-top:5px">兑换</div>
+</div>
+<div style="background:#FFF9E6;border:1px solid #FFE082;border-radius:8px;padding:10px;text-align:center">
+<div style="font-size:32px;margin-bottom:5px">🧸</div>
+<div style="font-size:12px;font-weight:bold">毛绒玩具</div>
+<div style="font-size:10px;color:#FFB347">500积分</div>
+<div style="background:#ccc;color:white;padding:4px 8px;border-radius:10px;font-size:9px;margin-top:5px">不足</div>
+</div>
+</div>
+</div>
+<div style="border-top:1px solid #eee;padding:10px;display:flex;justify-content:space-around">
+<div style="text-align:center"><div style="font-size:18px">🏠</div><div style="font-size:10px;color:#999">首页</div></div>
+<div style="text-align:center"><div style="font-size:18px">🌳</div><div style="font-size:10px;color:#999">任务树</div></div>
+<div style="text-align:center"><div style="font-size:18px">🎁</div><div style="font-size:10px;color:#FFB347">奖励</div></div>
+<div style="text-align:center"><div style="font-size:18px">👤</div><div style="font-size:10px;color:#999">我的</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 模块四：我的 -->
+<div class="section">
+<h3>模块四：我的 — 个人中心</h3>
+<div class="mockup">
+<div class="mockup-header">个人中心预览</div>
+<div class="mockup-body" style="background:#f5f5f5;padding:20px">
+<div style="max-width:280px;margin:0 auto;background:white;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);overflow:hidden">
+<div style="background:#4A90D9;padding:8px 15px;display:flex;justify-content:space-between;color:white;font-size:10px">
+<span>📶 微信</span><span>🔋 80%</span>
+</div>
+<div style="background:linear-gradient(135deg,#4A90D9,#6BB3F0);padding:25px 20px;text-align:center;color:white">
+<div style="width:70px;height:70px;background:#fff;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:32px">🧒</div>
+<div style="font-size:16px;font-weight:bold">小明</div>
+<div style="font-size:12px;opacity:0.9;margin-top:5px">已学习 45 天</div>
+</div>
+<div style="padding:15px">
+<div style="display:flex;justify-content:space-around;margin-bottom:20px;padding:15px 0;border-bottom:1px solid #eee">
+<div style="text-align:center">
+<div style="font-size:20px;font-weight:bold;color:#4A90D9">850</div>
+<div style="font-size:10px;color:#666">积分</div>
+</div>
+<div style="text-align:center">
+<div style="font-size:20px;font-weight:bold;color:#FF6B6B">7</div>
+<div style="font-size:10px;color:#666">连击天数</div>
+</div>
+<div style="text-align:center">
+<div style="font-size:20px;font-weight:bold;color:#7B68EE">3</div>
+<div style="font-size:10px;color:#666">已获成就</div>
+</div>
+</div>
+<div style="font-size:12px;color:#666;margin-bottom:10px">— 功能菜单 —</div>
+<div style="background:#f8f8f8;border-radius:8px;overflow:hidden">
+<div style="padding:12px 15px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee">
+<div style="display:flex;align-items:center;gap:10px"><span style="font-size:16px">📋</span><span style="font-size:13px">打卡记录</span></div>
+<span style="color:#ccc">›</span>
+</div>
+<div style="padding:12px 15px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee">
+<div style="display:flex;align-items:center;gap:10px"><span style="font-size:16px">🏆</span><span style="font-size:13px">我的成就</span></div>
+<span style="color:#ccc">›</span>
+</div>
+<div style="padding:12px 15px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee">
+<div style="display:flex;align-items:center;gap:10px"><span style="font-size:16px">📞</span><span style="font-size:13px">联系家长</span></div>
+<span style="color:#ccc">›</span>
+</div>
+<div style="padding:12px 15px;display:flex;align-items:center;justify-content:space-between">
+<div style="display:flex;align-items:center;gap:10px"><span style="font-size:16px">⚙️</span><span style="font-size:13px">设置</span></div>
+<span style="color:#ccc">›</span>
+</div>
+</div>
+</div>
+<div style="border-top:1px solid #eee;padding:10px;display:flex;justify-content:space-around">
+<div style="text-align:center"><div style="font-size:18px">🏠</div><div style="font-size:10px;color:#999">首页</div></div>
+<div style="text-align:center"><div style="font-size:18px">🌳</div><div style="font-size:10px;color:#999">任务树</div></div>
+<div style="text-align:center"><div style="font-size:18px">🎁</div><div style="font-size:10px;color:#999">奖励</div></div>
+<div style="text-align:center"><div style="font-size:18px">👤</div><div style="font-size:10px;color:#4A90D9">我的</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+

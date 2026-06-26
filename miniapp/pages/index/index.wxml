@@ -1,0 +1,123 @@
+<view class="page">
+  <view class="hero-section">
+    <view class="hero-bg">
+      <view class="bubble bubble-1"></view>
+      <view class="bubble bubble-2"></view>
+      <view class="bubble bubble-3"></view>
+      <view class="star star-1">✨</view>
+      <view class="star star-2">⭐</view>
+      <view class="star star-3">🌟</view>
+    </view>
+    
+    <view class="hero-content">
+      <view class="greeting-row">
+        <view class="user-block">
+          <view class="avatar-ring">
+            <text class="avatar-emoji">{{childInfo.avatarEmoji || '🧒'}}</text>
+          </view>
+          <view class="user-text">
+            <text class="greeting">{{greetingText}}，</text>
+            <text class="name">{{childInfo.name || '小朋友'}}</text>
+          </view>
+        </view>
+        <view class="streak-card" wx:if="{{streakDays > 0}}">
+          <text class="streak-flame">🔥</text>
+          <view class="streak-info">
+            <text class="streak-num">{{streakDays}}</text>
+            <text class="streak-label">天连击</text>
+          </view>
+        </view>
+      </view>
+      
+      <view class="quote">
+        <text>今天也要加油哦 💪</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="content-wrap">
+    <view class="stats-card">
+      <view class="stat-block">
+        <view class="stat-icon-wrap points-bg">
+          <text class="stat-icon">💎</text>
+        </view>
+        <view class="stat-text">
+          <text class="stat-value">{{points}}</text>
+          <text class="stat-label">积分</text>
+        </view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-block">
+        <view class="stat-icon-wrap done-bg">
+          <text class="stat-icon">✅</text>
+        </view>
+        <view class="stat-text">
+          <text class="stat-value">{{completedCount}}/{{totalCount}}</text>
+          <text class="stat-label">今日任务</text>
+        </view>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-block">
+        <view class="stat-icon-wrap days-bg">
+          <text class="stat-icon">📅</text>
+        </view>
+        <view class="stat-text">
+          <text class="stat-value">{{totalDays}}</text>
+          <text class="stat-label">累计天数</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section-header">
+      <view class="section-title-row">
+        <view class="title-bar"></view>
+        <text class="section-title">今日任务</text>
+        <text class="section-date">{{dateStr}}</text>
+      </view>
+      <text class="section-hint">完成任务可以获得积分奖励哦~</text>
+    </view>
+
+    <view class="task-list">
+      <view class="task-card {{item.completed ? 'task-done' : ''}}" wx:for="{{taskList}}" wx:key="id">
+        <view class="task-left">
+          <view class="task-icon-box {{item.completed ? 'icon-done' : ''}}">
+            <text class="task-icon">{{item.iconEmoji}}</text>
+          </view>
+          <view class="task-main">
+            <text class="task-name">{{item.name}}</text>
+            <view class="task-meta">
+              <view class="points-tag">
+                <text class="points-diamond">💎</text>
+                <text class="points-num">+{{item.points}}</text>
+              </view>
+              <view class="task-type-tag" wx:if="{{item.needPhoto === 1}}">
+                <text>📷 需拍照</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+        <view class="task-action">
+          <button
+            class="checkin-btn"
+            wx:if="{{!item.completed}}"
+            data-task="{{item}}"
+            bindtap="onCheckin">
+            <text>{{item.needPhoto === 1 ? '去打卡' : '打卡'}}</text>
+            <text class="btn-arrow">→</text>
+          </button>
+          <view class="done-badge" wx:else>
+            <text class="done-check">✓</text>
+            <text>已完成</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-state" wx:if="{{taskList.length === 0}}">
+      <text class="empty-emoji">🎉</text>
+      <text class="empty-title">今天没有任务</text>
+      <text class="empty-desc">快去玩耍吧~</text>
+    </view>
+  </view>
+</view>

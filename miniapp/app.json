@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/index/index",
+    "pages/task-tree/index",
+    "pages/reward/index",
+    "pages/profile/index",
+    "pages/checkin/index",
+    "pages/record/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FF9A9E",
+    "navigationBarTitleText": "亲子学习打卡",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f7f8fc"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#A18CD1",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/icons/home.png",
+        "selectedIconPath": "assets/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/task-tree/index",
+        "text": "任务树",
+        "iconPath": "assets/icons/tree.png",
+        "selectedIconPath": "assets/icons/tree-active.png"
+      },
+      {
+        "pagePath": "pages/reward/index",
+        "text": "奖励",
+        "iconPath": "assets/icons/reward.png",
+        "selectedIconPath": "assets/icons/reward-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "assets/icons/profile.png",
+        "selectedIconPath": "assets/icons/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

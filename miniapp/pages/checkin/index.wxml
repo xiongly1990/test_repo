@@ -1,0 +1,93 @@
+<view class="page">
+  <view class="hero-section">
+    <view class="hero-bg">
+      <view class="bubble bubble-1"></view>
+      <view class="bubble bubble-2"></view>
+      <view class="bubble bubble-3"></view>
+      <view class="star star-1">✨</view>
+      <view class="star star-2">⭐</view>
+      <view class="star star-3">🌟</view>
+    </view>
+    
+    <view class="hero-content">
+      <view class="date-row">
+        <view class="date-text">
+          <text class="date-big">{{dayNum}}</text>
+          <view class="date-side">
+            <text class="month-text">{{monthText}}</text>
+            <text class="weekday">{{weekdayText}}</text>
+          </view>
+        </view>
+        <view class="streak-badge" wx:if="{{streakDays > 0}}">
+          <text class="streak-flame">🔥</text>
+          <text class="streak-num">{{streakDays}}</text>
+        </view>
+      </view>
+      
+      <view class="hero-greeting">
+        <text class="greeting-text">{{greetingText}}，{{childName}}</text>
+        <text class="greeting-sub">今天也要元气满满哦 ✨</text>
+      </view>
+
+      <view class="progress-bar-wrap">
+        <view class="progress-info">
+          <text class="progress-label">今日进度</text>
+          <text class="progress-count">{{completedCount}}/{{taskList.length}}</text>
+        </view>
+        <view class="progress-track">
+          <view class="progress-fill" style="width: {{progressPercent}}%"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content-wrap">
+    <view class="section-header">
+      <text class="section-title">今日任务</text>
+      <text class="section-count">共{{taskList.length}}个任务</text>
+    </view>
+
+    <view class="task-list">
+      <view class="task-card {{item.completed ? 'completed' : ''}}" wx:for="{{taskList}}" wx:key="id">
+        <view class="task-icon-wrap" style="background: {{item.iconBg}}">
+          <text class="task-icon">{{item.iconEmoji}}</text>
+        </view>
+        
+        <view class="task-info">
+          <view class="task-name">{{item.name}}</view>
+          <view class="task-meta">
+            <view class="points-tag">
+              <text class="points-icon">⭐</text>
+              <text>+{{item.points}}积分</text>
+            </view>
+            <view class="photo-tag" wx:if="{{item.needPhoto === 1}}">
+              <text class="photo-icon">📷</text>
+              <text>需拍照</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="task-action">
+          <button
+            wx:if="{{!item.completed}}"
+            class="checkin-btn"
+            data-task="{{item}}"
+            bindtap="onCheckin">
+            <text class="btn-icon">✓</text>
+            <text>打卡</text>
+          </button>
+          <view wx:else class="done-badge">
+            <text class="done-icon">✓</text>
+            <text>已完成</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-state" wx:if="{{taskList.length === 0}}">
+      <text class="empty-emoji">🎯</text>
+      <text class="empty-title">今日暂无任务</text>
+      <text class="empty-desc">去和爸爸妈妈说想要什么任务吧~</text>
+    </view>
+  </view>
+</view>

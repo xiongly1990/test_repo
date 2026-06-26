@@ -1,0 +1,101 @@
+<view class="page">
+  <view class="hero-section">
+    <view class="hero-bg">
+      <view class="bubble bubble-1"></view>
+      <view class="bubble bubble-2"></view>
+      <view class="star star-1">✨</view>
+      <view class="star star-2">⭐</view>
+    </view>
+    
+    <view class="hero-content">
+      <view class="hero-title-row">
+        <text class="hero-title">打卡记录</text>
+        <text class="hero-subtitle">坚持就是胜利 📋</text>
+      </view>
+      
+      <view class="mini-stats">
+        <view class="mini-stat">
+          <text class="mini-num">{{totalDays}}</text>
+          <text class="mini-label">累计打卡</text>
+        </view>
+        <view class="mini-stat">
+          <text class="mini-num">{{streakDays}}</text>
+          <text class="mini-label">连续天数</text>
+        </view>
+        <view class="mini-stat">
+          <text class="mini-num">{{points}}</text>
+          <text class="mini-label">获得积分</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content-wrap">
+    <view class="filter-tabs">
+      <view
+        class="filter-tab {{currentFilter === 'all' ? 'active' : ''}}"
+        data-status="all"
+        bindtap="onFilterChange">
+        全部
+      </view>
+      <view
+        class="filter-tab {{currentFilter === 0 ? 'active' : ''}}"
+        data-status="{{0}}"
+        bindtap="onFilterChange">
+        待审核
+      </view>
+      <view
+        class="filter-tab {{currentFilter === 1 ? 'active' : ''}}"
+        data-status="{{1}}"
+        bindtap="onFilterChange">
+        已通过
+      </view>
+      <view
+        class="filter-tab {{currentFilter === 2 ? 'active' : ''}}"
+        data-status="{{2}}"
+        bindtap="onFilterChange">
+        已拒绝
+      </view>
+    </view>
+
+    <view class="record-list">
+      <view class="record-card" wx:for="{{recordList}}" wx:key="id">
+        <view class="record-date-col">
+          <text class="record-day">{{item.dayStr}}</text>
+          <text class="record-month">{{item.monthStr}}</text>
+        </view>
+        <view class="record-main">
+          <view class="record-top">
+            <text class="record-task">{{item.taskName}}</text>
+            <view class="status-tag {{item.statusClass}}">
+              {{item.statusText}}
+            </view>
+          </view>
+          <view class="record-bottom">
+            <view class="record-time">
+              <text class="time-icon">⏰</text>
+              <text>{{item.timeStr}}</text>
+            </view>
+            <text class="record-points" wx:if="{{item.status === 1}}">+{{item.points}}积分</text>
+          </view>
+        </view>
+        <view class="record-photo" wx:if="{{item.photoUrl}}" bindtap="previewPhoto" data-url="{{item.photoUrl}}">
+          <image src="{{item.photoUrl}}" mode="aspectFill"></image>
+        </view>
+        <view class="record-no-photo" wx:elif="{{item.status === 1}}">
+          <text>✓</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-state" wx:if="{{recordList.length === 0}}">
+      <text class="empty-emoji">📭</text>
+      <text class="empty-title">暂无记录</text>
+      <text class="empty-desc">快去完成打卡任务吧~</text>
+    </view>
+
+    <view class="load-more" wx:if="{{hasMore && recordList.length > 0}}" bindtap="loadMore">
+      <text>加载更多</text>
+    </view>
+  </view>
+</view>

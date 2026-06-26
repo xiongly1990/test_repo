@@ -1,0 +1,110 @@
+<view class="page">
+  <view class="hero-section">
+    <view class="hero-bg">
+      <view class="bubble bubble-1"></view>
+      <view class="bubble bubble-2"></view>
+      <view class="bubble bubble-3"></view>
+      <view class="star star-1">✨</view>
+      <view class="star star-2">⭐</view>
+      <view class="star star-3">🌟</view>
+    </view>
+    
+    <view class="hero-content">
+      <view class="logo-wrap">
+        <text class="logo-emoji">🎒</text>
+      </view>
+      <text class="app-name">亲子学习打卡</text>
+      <text class="app-slogan">让学习更有趣，让成长更快乐</text>
+    </view>
+  </view>
+
+  <view class="content-wrap">
+    <view class="login-card">
+      <view class="section-header">
+        <text class="section-title">选择账号登录</text>
+        <text class="section-hint">选择你的头像开始学习之旅~</text>
+      </view>
+
+      <view class="children-list" wx:if="{{children.length > 0}}">
+        <view 
+          class="child-item {{selectedChildId === item.id ? 'selected' : ''}}"
+          wx:for="{{children}}"
+          wx:key="id"
+          data-child="{{item}}"
+          bindtap="onSelectChild">
+          <view class="child-avatar">
+            <text class="child-emoji">{{item.avatarEmoji || '🧒'}}</text>
+            <view class="select-badge" wx:if="{{selectedChildId === item.id}}">
+              <text>✓</text>
+            </view>
+          </view>
+          <text class="child-name">{{item.name}}</text>
+        </view>
+      </view>
+
+      <view class="empty-children" wx:if="{{children.length === 0 && !loading}}">
+        <text class="empty-emoji">📭</text>
+        <text class="empty-text">还没有账号哦~</text>
+      </view>
+
+      <button 
+        class="login-btn {{selectedChildId ? '' : 'disabled'}}"
+        wx:if="{{children.length > 0}}"
+        disabled="{{!selectedChildId}}"
+        bindtap="onLogin">
+        <text>开始学习</text>
+        <text class="btn-arrow">→</text>
+      </button>
+    </view>
+
+    <view class="register-card">
+      <view class="register-header">
+        <view class="divider-line"></view>
+        <text class="divider-text">或</text>
+        <view class="divider-line"></view>
+      </view>
+
+      <view class="register-form" wx:if="{{showRegister}}">
+        <view class="input-group">
+          <view class="input-icon">👤</view>
+          <input 
+            class="input-field"
+            type="text"
+            placeholder="输入你的名字"
+            value="{{registerName}}"
+            bindinput="onNameInput"
+            maxlength="20" />
+        </view>
+
+        <view class="avatar-picker">
+          <text class="picker-label">选择你的头像：</text>
+          <scroll-view class="avatar-scroll" scroll-x>
+            <view 
+              class="avatar-option {{registerAvatar === emoji ? 'selected' : ''}}"
+              wx:for="{{avatarOptions}}"
+              wx:for-item="emoji"
+              wx:key="*this"
+              data-avatar="{{emoji}}"
+              bindtap="onSelectAvatar">
+              <text>{{emoji}}</text>
+            </view>
+          </scroll-view>
+        </view>
+
+        <view class="register-actions">
+          <button class="confirm-btn" bindtap="onConfirmRegister">
+            <text>创建账号</text>
+          </button>
+          <button class="cancel-btn" bindtap="onCancelRegister">
+            <text>取消</text>
+          </button>
+        </view>
+      </view>
+
+      <button class="register-btn" wx:else bindtap="onShowRegister">
+        <text class="register-icon">+</text>
+        <text>创建新账号</text>
+      </button>
+    </view>
+  </view>
+</view>
